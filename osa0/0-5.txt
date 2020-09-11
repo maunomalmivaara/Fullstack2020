@@ -1,0 +1,19 @@
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa
+palvelin-->selain: HTML-koodi
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+palvelin-->selain: main.css
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/spa.js
+palvelin-->selain: main.js
+
+note over selain:
+Selain alkaa suorittaa js-koodia,
+joka pyytää JSON-datan palvelimelta.
+end note
+
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+palvelin-->selain: [{content: "ok", date: "2020-09-10T17:52:23.861Z"}, …]
+
+note over selain:
+Selain suorittaa tapahtumankäsittelijän,
+joka renderöi muistiinpanot näytölle.
+end note

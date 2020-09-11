@@ -1,0 +1,27 @@
+selain->palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+note over palvelin
+Uudelleenohjauspyyntö.
+Palvelin kehottaa selainta pyytämään sijainnin /exampleapp/notes
+end note
+
+palvelin-->selain: Status Code 302
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+palvelin-->selain: html-koodi
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+palvelin-->selain: main.css
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+palvelin-->selain: main.js
+
+note over selain
+Selain alkaa suorittaa js-koodia,
+joka pyytää JSON-datan palvelimelta.
+end note
+
+selain->palvelin: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+palvelin-->selain: [{content: "new _note_spa", date: "2020-09-10T09:54:53.113Z"}, ...]
+
+note over selain:
+Selain suorittaa tapahtumankäsittelijän,
+joka renderöi muistiinpanot näytölle.
+end note

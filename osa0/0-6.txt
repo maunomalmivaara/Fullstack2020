@@ -1,0 +1,9 @@
+note over selain
+Havaittuaan uuden submitin js-koodin lomake-elementin
+tapahtumankäsittelijä estää sivua latautumasta uudelleen preventDefault():lla.
+Tämän jälkeen tapahtumankäsittelijä lisää notesiin uuden muistiinpanon, piirtää
+ruudun uuden sisällön ja lähettää uuden muistiinpanon JSON-muodossa
+palvelimelle POST-pyyntönä.
+end note over
+selain->palvelin: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+palvelin-->selain: Status Code 201: Created
