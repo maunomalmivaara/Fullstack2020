@@ -10,7 +10,8 @@ const Persons = (props) => {
                 <Person key={person.id}
                         person={person}
                         remove={() => props.remove(person.id)}
-                />)}
+                />
+            )}
         </ul>
         </>
     )
