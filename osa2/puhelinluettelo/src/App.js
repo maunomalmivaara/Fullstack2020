@@ -5,12 +5,10 @@ import Filter from './components/Filter'
 import Notification from './components/Notification'
 import personService from './services/persons'
 
-
 const App = () => {
 
   const [ persons, setPersons] = useState([])
   const [ newFilter, setNewFilter ] = useState('')
-  const [ showAll, setShowAll ] = useState(true)
   const [ newName, setNewName ] = useState('')
   const [ newNumber, setNewNumber ] = useState('')
   const [ newMessage, setNewMessage ] = useState(null)
@@ -95,14 +93,29 @@ const App = () => {
     setNewFilter(newFilter)
   }
 
+  //Function for setting time out for messages:
   const messageTimeOut = (ms) => {
     return setTimeout(() => {setNewMessage(null)}, ms)
   }
 
-  //Choose which persons to show based on showAll value and filter:
-  const personsToShow = showAll
-  ? persons
-  : persons.filter(p => p.name.startsWith(newFilter))
+  //Function for handling changes in name input field:
+  const handleNameChange = (event) => {
+    setNewName(event.target.value)
+  }
+
+  //Function for handling changes in number input field:
+  const handleNumberChange = (event) => {
+    setNewNumber(event.target.value)
+  }
+
+  //Function for handling changes in filter input field:
+  const handleFilterChange = (event) => {
+    setNewFilter(event.target.value)
+  }
+
+  //Choose which persons to show based on filter:
+    //(If filter is an empty string, then shows all)
+  const personsToShow = persons.filter(p => p.name.startsWith(newFilter))
 
   return (
     <div>
@@ -112,8 +125,7 @@ const App = () => {
       <Filter
         newFilter={newFilter}
         filterPersons={filterPersons}
-        setNewFilter={setNewFilter}
-        setShowAll={setShowAll}
+        handleFilterChange={handleFilterChange}
       />
 
       <h3>Add New:</h3>
@@ -121,9 +133,8 @@ const App = () => {
         newName={newName}
         newNumber={newNumber}
         addPerson={addPerson}
-        setPersons={setPersons}
-        setNewName={setNewName}
-        setNewNumber={setNewNumber}
+        handleNameChange={handleNameChange}
+        handleNumberChange={handleNumberChange}
       />
 
       <h3>Numbers</h3>
