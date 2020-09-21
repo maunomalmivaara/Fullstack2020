@@ -88,11 +88,6 @@ const App = () => {
     }
   }
 
-  //Function for filtering persons:
-  const filterPersons = () => {
-    setNewFilter(newFilter)
-  }
-
   //Function for setting time out for messages:
   const messageTimeOut = (ms) => {
     return setTimeout(() => {setNewMessage(null)}, ms)
@@ -124,7 +119,6 @@ const App = () => {
 
       <Filter
         newFilter={newFilter}
-        filterPersons={filterPersons}
         handleFilterChange={handleFilterChange}
       />
 

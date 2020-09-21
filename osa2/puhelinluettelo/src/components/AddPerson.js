@@ -8,7 +8,6 @@ const AddPerson = (props) => {
     const handleNameChange = props.handleNameChange
     const handleNumberChange = props.handleNumberChange
     
-
     return (
         <div>
             <form onSubmit={addPerson}>
