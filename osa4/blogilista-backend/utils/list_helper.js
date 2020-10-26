@@ -3,18 +3,12 @@ const dummy = (blogs) => {
 }
 
 const totalLikes = (blogs) => {
-    const summer = (a, b) => {
-        return {likes: a.likes + b.likes}
-    }
+    const summer = (a, b) => ({likes: a.likes + b.likes})
     return blogs.reduce(summer, {likes: 0}).likes
 }
 
 const favoriteBlog = (blogs) => {
-    const betterOfTwo = (a, b) => {
-        return a.likes > b.likes
-            ? a
-            : b
-    }
+    const betterOfTwo = (a, b) => a.likes > b.likes ? a : b
     return blogs.length === 0
         ? {}
         : blogs.reduce(betterOfTwo, blogs[0])
@@ -61,6 +55,5 @@ module.exports = {
     totalLikes,
     favoriteBlog,
     mostBlogs,
-    mostLikes,
-    findWithMost
+    mostLikes
 }
