@@ -1,8 +1,9 @@
 POST http://localhost:3003/api/blogs/
 Content-Type: application/json
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InNpbGtrdSIsImlkIjoiNWZhM2ZhYzFjYzU1M2IxYWFiNThmZDIyIiwiaWF0IjoxNjA0NTkzODA3fQ.QzZD8BMM3pKRO35y4GGVVhR0M06CJSCUR9ZenZlF9fg
 
 {
-    "title": "Third blog",
-    "author": "Teemu Teekkari",
-    "url": "www.youtube.com"
+    "title": "First Silvias Blog",
+    "author": "Jaska Jokunen",
+    "url": "www.amazon.com"
 }

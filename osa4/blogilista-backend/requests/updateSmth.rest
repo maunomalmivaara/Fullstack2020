@@ -1,0 +1,9 @@
+PUT http://localhost:3003/api/blogs/5f96dcd6a565a2a53ff77a0e
+Content-Type: application/json
+
+{
+    "title": "First blog",
+    "author": "Mauno Malmivaara",
+    "url": "www.google.com",
+    "likes": 1
+}
