@@ -1,40 +1,69 @@
-import React from 'react'
+import React, { useState } from 'react'
 
-const BlogForm = (props) => {
+const BlogForm = ({ createBlog }) => {
+
+    const [blogTitle, setBlogTitle] = useState('')
+    const [blogAuthor, setBlogAuthor] = useState('')
+    const [blogUrl, setBlogUrl] = useState('')
+
+    const addBlog = (event) => {
+        event.preventDefault()
+
+        createBlog({
+            title: blogTitle,
+            author: blogAuthor,
+            url: blogUrl
+        })
+        setBlogTitle('')
+        setBlogAuthor('')
+        setBlogUrl('')
+    }
+
+    const handleTitleChange = (event) => {
+        setBlogTitle(event.target.value)
+    }
+
+    const handleAuthorChange = (event) => {
+        setBlogAuthor(event.target.value)
+    }
+
+    const handleUrlChange = (event) => {
+        setBlogUrl(event.target.value)
+    }
 
     return (
         <div><br/>
             <h3>Add New Blog:</h3>
-            <form onSubmit={props.addBlog}>
+            <form onSubmit={addBlog}>
                 <div>
                     Title:
                     <input
                         type="text"
-                        value={props.blogTitle}
+                        value={blogTitle}
                         name="BlogTitle"
-                        onChange={props.handleTitleChange}
+                        onChange={handleTitleChange}
                     />
                 </div>
                 <div>
                     Author:
                     <input
                         type="text"
-                        value={props.blogAuthor}
+                        value={blogAuthor}
                         name="BlogAuthor"
-                        onChange={props.handleAuthorChange}
+                        onChange={handleAuthorChange}
                     />
                 </div>
                 <div>
                     URL:
                     <input
                         type="text"
-                        value={props.blogUrl}
+                        value={blogUrl}
                         name="BlogUrl"
-                        onChange={props.handleUrlChange}
+                        onChange={handleUrlChange}
                     />
                 </div>
                 <button type="submit">Save Blog</button>
-            </form> 
+            </form>
         </div>
     )
 }

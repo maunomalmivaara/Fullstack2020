@@ -19,6 +19,22 @@ const create = async newObject => {
     return response.data
 }
 
+const update = async (id, newObject) => {
+    const response = await axios.put(`${baseUrl}/${id}`, newObject)
+    return response.data
+}
+
+const remove = async (idToDelete) => {
+    const config = {
+        headers: {
+            Authorization: token
+        },
+    }
+
+    const response = await axios.delete(`${baseUrl}/${idToDelete}`, config)
+    return response.data
+}
+
 const setToken = newToken => {
     token = `bearer ${newToken}`
 }
@@ -26,5 +42,7 @@ const setToken = newToken => {
 export default {
     getAll,
     create,
+    update,
+    remove,
     setToken
 }

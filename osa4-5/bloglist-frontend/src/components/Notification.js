@@ -11,11 +11,11 @@ const Notification = ({ message, style }) => {
         padding: '10px',
         marginBottom: '10px'
     }
-    
-    const successStyle = {...errorStyle, color: 'green'}
 
-    const infoStyle = {...errorStyle, color: 'blue'}
-    
+    const successStyle = { ...errorStyle, color: 'green' }
+
+    const infoStyle = { ...errorStyle, color: 'blue' }
+
     const styleToChoose = style === 'success'
         ? successStyle
         : style === 'error'

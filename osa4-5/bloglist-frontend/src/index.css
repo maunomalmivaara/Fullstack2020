@@ -26,8 +26,10 @@ h3 {
 
 .blog {
     color: rgb(39, 50, 116);
-    padding-top: 3px;
     font-size: 15px;
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 10px;
 }
 
 .boxDiv {
