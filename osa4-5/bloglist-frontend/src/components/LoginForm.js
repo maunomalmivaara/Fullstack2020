@@ -10,7 +10,6 @@ const LoginForm = ({
 }) => {
     return (
         <form onSubmit={handleLogin}>
-            <h3>Log in to Blog App</h3>
             <div>
                 Username:
                 <input

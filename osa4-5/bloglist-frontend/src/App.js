@@ -66,9 +66,15 @@ const App = () => {
         }
     }
 
-    const handleLogout = () => {
+    const handleLogout = async () => {
         window.localStorage.removeItem('loggedBlogAppUser')
-        window.location.reload()
+        //window.location.reload()
+        setUser(null)
+        makeMessage(
+            'success',
+            'Logged out succesfully!',
+            5000
+        )
     }
 
     const addBlog = async (blogObject) => {
@@ -172,6 +178,7 @@ const App = () => {
             <Notification message={newMessage} style={newMessageStyle} />
             {user === null
                 ? <div>
+                    <h3>Log in to Blog App</h3>
                     {loginForm()}
                 </div>
                 : <div>
