@@ -23,8 +23,8 @@ const Blog = ({ handleLike, blog, user, remove }) => {
             <p>
                 URL: <a href={`https://${blog.url}`}>{blog.url}</a>
             </p>
-            <p>Likes: {blog.likes}
-                <button onClick={handleLikeClick}>Like</button>
+            <p className='blog-likes'>Likes: {blog.likes}
+                <button onClick={handleLikeClick} className='like-button'>Like</button>
             </p>
             <p>Added By: {blog.user.username}</p>
             {user.username === blog.user.username
@@ -32,7 +32,7 @@ const Blog = ({ handleLike, blog, user, remove }) => {
                 : ''
             }
         </div>
-        : <div className='blog'>
+        : <div className='blog blogHidden'>
             <h4>{blog.title}</h4>
             <button onClick={handleExpandClick}>Show</button>
         </div>

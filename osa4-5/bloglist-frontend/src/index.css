@@ -14,22 +14,24 @@ code {
 
 h1 {
     color: rgb(9, 92, 170);
-    font-style: italic;
-    padding-top: 10px;
     font-size: 50px;
 }
 
 h3 {
-    color: rgb(51, 101, 148);
-    font-style: italic;
+    color: rgb(9, 92, 170);
 }
 
 .blog {
-    color: rgb(39, 50, 116);
+    color: rgb(5, 51, 94);;
     font-size: 15px;
     border: 1px solid;
     border-radius: 8px;
     padding: 10px;
+    background: white;
+}
+
+.blogHidden * {
+    display: inline
 }
 
 .boxDiv {
@@ -40,4 +42,38 @@ h3 {
 
 button {
     margin-top: 10px;
+}
+
+.blogInput {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.blogInputText {
+    display: inline;
+}
+
+.blogInputField {
+    float: right;
+    width: 70%;
+}
+
+.blogInputBox {
+    width: 80%;
+}
+
+.blogFormDiv {
+    width: 35%;
+}
+
+.loggedInDiv {
+    width: 20%;
+}
+
+.subdiv-1 {
+    color: black;
+    border: 1px solid;
+    border-radius: 8px;
+    padding: 10px;
+    background: rgb(216, 216, 216);
 }

@@ -18,9 +18,9 @@ const App = () => {
 
     const getAllBlogsHook = () => {
         const fetchData = async () => {
-            const blogs = await blogService.getAll()
-            const blogsSorted = blogs.sort((a, b) => (a.likes > b.likes) ? 1 : -1)
-            setBlogs( blogsSorted )
+            let blogs = await blogService.getAll()
+            blogs = blogs.sort((a, b) => (a.likes < b.likes) ? 1 : -1)
+            setBlogs( blogs )
         }
         fetchData()
     }
@@ -151,24 +151,26 @@ const App = () => {
     )
 
     const loggedInText = () => (
-        <div>
+        <div className="loggedInDiv subdiv-1">
             <p>Logged in as {user.name}</p>
             <button onClick={handleLogout}>Log Out</button>
         </div>
     )
 
     const blogList = () => (
-        <div>
+        <div className="allBlogs subdiv-1">
             <h3>All Blogs:</h3>
-            {blogs.map(blog =>
-                <Blog
-                    key={blog.id}
-                    handleLike={handleLike}
-                    blog={blog}
-                    user={user}
-                    remove={removeBlog}
-                />
-            )}
+            <div id="blogs-listed">
+                {blogs.map(blog =>
+                    <Blog
+                        key={blog.id}
+                        handleLike={handleLike}
+                        blog={blog}
+                        user={user}
+                        remove={removeBlog}
+                    />
+                )}
+            </div>
         </div>
     )
 
@@ -182,8 +184,8 @@ const App = () => {
                     {loginForm()}
                 </div>
                 : <div>
-                    {loggedInText()}
-                    {blogForm()}
+                    {loggedInText()}<br/>
+                    {blogForm()}<br/>
                     {blogList()}
                 </div>
             }
