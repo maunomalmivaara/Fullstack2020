@@ -152,9 +152,9 @@ const App = () => {
 
     const loggedInText = () => (
         <div className="logged-in-div float-right">
-            <div className='logged-in-text float-left'>
-                <b>Logged in as </b>
-                <h5 id='logged-in-username'>{user.name}</h5>
+            <div className='logged-in-text text-right'>
+                <b className=''>Logged in as </b>
+                <h5 >{user.name}</h5>
             </div>
             <div>
                 <Button variant='danger' className='btn-sm float-right' onClick={handleLogout}>Log Out</Button>
