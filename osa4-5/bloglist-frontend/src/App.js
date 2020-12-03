@@ -151,44 +151,63 @@ const App = () => {
     )
 
     const loggedInText = () => (
-        <div className="loggedInDiv subdiv-1">
-            <p>Logged in as {user.name}</p>
-            <Button variant='danger' className='btn-sm' onClick={handleLogout}>Log Out</Button>
+        <div className="loggedInDiv float-right">
+            <p className='float-right'>Logged in as {user.name}</p>
+            <Button variant='danger' className='btn-sm float-right' onClick={handleLogout}>Log Out</Button>
         </div>
     )
 
     const blogList = () => (
-        <div className="allBlogs subdiv-1">
-            <h3>All Blogs:</h3>
-            <div id="blogs-listed">
-                {blogs.map(blog =>
-                    <Blog
-                        key={blog.id}
-                        handleLike={handleLike}
-                        blog={blog}
-                        user={user}
-                        remove={removeBlog}
-                    />
-                )}
+            <div className="allBlogs white-container">
+                <h3>All Blogs:</h3>
+                <div id="blogs-listed">
+                    {blogs.map(blog =>
+                        <Blog
+                            key={blog.id}
+                            handleLike={handleLike}
+                            blog={blog}
+                            user={user}
+                            remove={removeBlog}
+                        />
+                    )}
+                </div>
             </div>
-        </div>
     )
+
 
     return (
         <div className='boxDiv'>
-            <h1>Blog App</h1>
-            <Notification message={newMessage} style={newMessageStyle} />
-            {user === null
-                ? <div>
-                    <h3>Log in to Blog App</h3>
-                    {loginForm()}
+            <div className='row'>
+                <div className='col'>
+                    <Notification message={newMessage} style={newMessageStyle} />
                 </div>
-                : <div>
-                    {loggedInText()}<br/>
-                    {blogForm()}<br/>
-                    {blogList()}
+            </div>
+            <div className='row'>
+                <div className='col'>
+                    <h1>Blog App</h1>
+                    {user===null 
+                        ? <div>
+                            <h3>Log in to Blog App</h3>
+                            {loginForm()}
+                        </div>
+                        : null
+                    }
                 </div>
-            }
+                {user === null
+                    ? null
+                    : <div className='col'>
+                            {loggedInText()}
+                    </div>
+                }
+            </div>
+            {user===null 
+                ? null 
+                : <div className='row subdiv-1'>
+                    <div className='col'>
+                        {blogForm()}
+                        {blogList()}
+                    </div>
+                </div>}
         </div>
     )
 }

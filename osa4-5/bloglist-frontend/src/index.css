@@ -26,13 +26,12 @@ button {
     margin: 2px;
 }
 
+.allBlogs {
+    margin-top: 10px;
+}
+
 .blog {
-    color: rgb(5, 51, 94);;
     font-size: 15px;
-    border-radius: 8px;
-    padding: 15px;
-    background: white;
-    box-shadow: 0px 2px 4px rgb(131, 131, 131);
 }
 
 .title-and-showbutton-div *, .blogHidden * {
@@ -40,9 +39,7 @@ button {
 }
 
 .boxDiv {
-    padding-left: 10px;
-    padding-right: 10px;
-    padding-bottom: 10px;
+    margin: 10px;
 }
 
 .loginFormDiv {
@@ -86,17 +83,17 @@ button {
 
 .loggedInDiv {
     width: 20%;
-    min-width: 150px;
+    min-width: 300px;
 }
 
 #blogs-listed * {
     margin-bottom: 10px;
 }
 
-.subdiv-1 {
+.white-container {
     color: black;
     border-radius: 8px;
-    padding: 10px;
+    padding: 15px;
     background: white;
     box-shadow: 0px 2px 4px rgb(131, 131, 131);
 }

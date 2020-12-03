@@ -17,7 +17,7 @@ const Blog = ({ handleLike, blog, user, remove }) => {
     }
 
     return expanded
-        ? <div className='blog'>
+        ? <div className='blog white-container'>
             <div className='title-and-showbutton-div'>
                 <h2>{blog.title}</h2>
                 <Button variant='secondary' className='btn-sm' style={{float: 'right', verticalAlign:'text-top'}} onClick={handleExpandClick}>Hide</Button>
@@ -37,7 +37,7 @@ const Blog = ({ handleLike, blog, user, remove }) => {
                 : ''
             }
         </div>
-        : <div className='blog blogHidden'>
+        : <div className='blog white-container blogHidden'>
             <h5>{blog.title}</h5>
             <Button style={{float: 'right', verticalAlign: 'middle'}} variant='info' className='btn-sm' onClick={handleExpandClick}>Show</Button>
         </div>
