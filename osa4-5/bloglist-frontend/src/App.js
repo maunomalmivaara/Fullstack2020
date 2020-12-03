@@ -151,9 +151,13 @@ const App = () => {
     )
 
     const loggedInText = () => (
-        <div className="loggedInDiv float-right">
-            <p className='float-right'>Logged in as {user.name}</p>
+        <div className="logged-in-div float-right">
+            <div className='logged-in-text float-right'>
+                <b >Logged in as </b>
+                <h5 >{user.name}</h5>
+            </div>
             <Button variant='danger' className='btn-sm float-right' onClick={handleLogout}>Log Out</Button>
+                
         </div>
     )
 
@@ -179,19 +183,7 @@ const App = () => {
         <div className='boxDiv'>
             <div className='row'>
                 <div className='col'>
-                    <Notification message={newMessage} style={newMessageStyle} />
-                </div>
-            </div>
-            <div className='row'>
-                <div className='col'>
                     <h1>Blog App</h1>
-                    {user===null 
-                        ? <div>
-                            <h3>Log in to Blog App</h3>
-                            {loginForm()}
-                        </div>
-                        : null
-                    }
                 </div>
                 {user === null
                     ? null
@@ -200,14 +192,35 @@ const App = () => {
                     </div>
                 }
             </div>
+
+            <div className='row'>
+                <div className='col'>
+                    <Notification message={newMessage} style={newMessageStyle} />
+                </div>
+            </div>
+
             {user===null 
-                ? null 
-                : <div className='row subdiv-1'>
-                    <div className='col'>
-                        {blogForm()}
-                        {blogList()}
+                ? <>
+                    <div className='row'>
+                        <div className='col'>
+                            <h3>Log in to Blog App</h3>
+                            {loginForm()}
+                        </div>
                     </div>
-                </div>}
+                </>
+                : <>
+                    <div className='row'>
+                        <div className='col'>
+                            {blogForm()}
+                        </div>
+                    </div>
+                    <div className='row subdiv-1'>
+                        <div className='col'>
+                            {blogList()}
+                        </div>
+                    </div>
+                </>
+            }
         </div>
     )
 }

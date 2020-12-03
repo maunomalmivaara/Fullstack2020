@@ -69,7 +69,7 @@ const BlogForm = ({ createBlog }) => {
                         className="blogInputField inputField"
                     />
                 </div>
-                <Button variant='success' type="submit" className='btn-sm'>Save Blog</Button>
+                <Button variant='primary' type="submit" className='btn-sm'>Save Blog</Button>
             </form>
         </div>
     )

@@ -81,9 +81,9 @@ button {
     width: 80%;
 }
 
-.loggedInDiv {
-    width: 20%;
-    min-width: 300px;
+.logged-in-div {
+    width: 40%;
+    min-width: 200px;
 }
 
 #blogs-listed * {
