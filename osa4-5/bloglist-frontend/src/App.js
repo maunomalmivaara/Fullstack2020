@@ -6,6 +6,7 @@ import BlogForm from './components/BlogForm'
 import Togglable from './components/Togglable'
 import blogService from './services/blogs'
 import loginService from './services/login'
+import Button from 'react-bootstrap/Button'
 
 const App = () => {
     const [blogs, setBlogs] = useState([])
@@ -59,7 +60,7 @@ const App = () => {
         }
         catch (exception) {
             makeMessage(
-                'error',
+                'danger',
                 'Login failed: Incorrect credentials',
                 5000
             )
@@ -68,7 +69,6 @@ const App = () => {
 
     const handleLogout = async () => {
         window.localStorage.removeItem('loggedBlogAppUser')
-        //window.location.reload()
         setUser(null)
         makeMessage(
             'success',
@@ -85,7 +85,7 @@ const App = () => {
 
         makeMessage(
             'success',
-            `New blog with title ${createdBlog.title} added!`,
+            `New blog with title "${createdBlog.title}" added!`,
             5000
         )
     }
@@ -153,7 +153,7 @@ const App = () => {
     const loggedInText = () => (
         <div className="loggedInDiv subdiv-1">
             <p>Logged in as {user.name}</p>
-            <button onClick={handleLogout}>Log Out</button>
+            <Button variant='danger' className='btn-sm' onClick={handleLogout}>Log Out</Button>
         </div>
     )
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button'
 
 const Blog = ({ handleLike, blog, user, remove }) => {
     const [expanded, setExpanded] = useState(false)
@@ -17,24 +18,28 @@ const Blog = ({ handleLike, blog, user, remove }) => {
 
     return expanded
         ? <div className='blog'>
-            <h4>{blog.title}</h4>
-            <button onClick={handleExpandClick}>Hide</button>
+            <div className='title-and-showbutton-div'>
+                <h2>{blog.title}</h2>
+                <Button variant='secondary' className='btn-sm' style={{float: 'right', verticalAlign:'text-top'}} onClick={handleExpandClick}>Hide</Button>
+            </div>
             <p>Author: {blog.author}</p>
             <p>
                 URL: <a href={`https://${blog.url}`}>{blog.url}</a>
             </p>
             <p className='blog-likes'>Likes: {blog.likes}
-                <button onClick={handleLikeClick} className='like-button'>Like</button>
+                <Button variant='success' className='like-button btn-sm' onClick={handleLikeClick}>
+                    Like
+                </Button>
             </p>
             <p>Added By: {blog.user.username}</p>
             {user.username === blog.user.username
-                ? <button onClick={handleRemoveClick}>Remove</button>
+                ? <Button variant='danger' size='sm' onClick={handleRemoveClick}>Remove</Button>
                 : ''
             }
         </div>
         : <div className='blog blogHidden'>
-            <h4>{blog.title}</h4>
-            <button onClick={handleExpandClick}>Show</button>
+            <h5>{blog.title}</h5>
+            <Button style={{float: 'right', verticalAlign: 'middle'}} variant='info' className='btn-sm' onClick={handleExpandClick}>Show</Button>
         </div>
 }
 

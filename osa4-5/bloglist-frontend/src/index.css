@@ -5,6 +5,7 @@ body {
         sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background: rgb(235, 237, 245);
 }
 
 code {
@@ -17,20 +18,24 @@ h1 {
     font-size: 50px;
 }
 
-h3 {
+h2, h3, h5 {
     color: rgb(9, 92, 170);
+}
+
+button {
+    margin: 2px;
 }
 
 .blog {
     color: rgb(5, 51, 94);;
     font-size: 15px;
-    border: 1px solid;
     border-radius: 8px;
-    padding: 10px;
+    padding: 15px;
     background: white;
+    box-shadow: 0px 2px 4px rgb(131, 131, 131);
 }
 
-.blogHidden * {
+.title-and-showbutton-div *, .blogHidden * {
     display: inline
 }
 
@@ -40,40 +45,58 @@ h3 {
     padding-bottom: 10px;
 }
 
-button {
-    margin-top: 10px;
+.loginFormDiv {
+    width: 30%;
+    min-width: 260px;
 }
 
-.blogInput {
-    padding-top: 5px;
-    padding-bottom: 5px;
+.blogFormDiv {
+    width: 60%;
+    min-width: 400px;
 }
 
-.blogInputText {
-    display: inline;
-}
-
-.blogInputField {
-    float: right;
-    width: 70%;
+.loginInputBox {
+    width: 80%;
 }
 
 .blogInputBox {
     width: 80%;
 }
 
-.blogFormDiv {
-    width: 35%;
+.formInputDiv {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.inputText {
+    display: inline;
+}
+
+.inputField {
+    float: right;
+}
+
+.loginInputField {
+    width: 60%;
+}
+
+.blogInputField {
+    width: 80%;
 }
 
 .loggedInDiv {
     width: 20%;
+    min-width: 150px;
+}
+
+#blogs-listed * {
+    margin-bottom: 10px;
 }
 
 .subdiv-1 {
     color: black;
-    border: 1px solid;
     border-radius: 8px;
     padding: 10px;
-    background: rgb(216, 216, 216);
+    background: white;
+    box-shadow: 0px 2px 4px rgb(131, 131, 131);
 }

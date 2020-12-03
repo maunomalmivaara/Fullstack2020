@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Button from 'react-bootstrap/Button'
 
 const BlogForm = ({ createBlog }) => {
 
@@ -32,43 +33,43 @@ const BlogForm = ({ createBlog }) => {
     }
 
     return (
-        <div className="blogFormDiv subdiv-1">
+        <div className="blogFormDiv">
             <h3 className="blogFormTitle">Add New Blog:</h3>
             <form onSubmit={addBlog} id="BlogForm" className="blogInputBox">
-                <div className="blogInput">
-                    <h5 className="blogInputText">Title:</h5>
+                <div className="formInputDiv">
+                    <h6 className="inputText">Title:</h6>
                     <input
                         type="text"
                         value={blogTitle}
                         name="BlogTitle"
                         id="BlogTitle"
                         onChange={handleTitleChange}
-                        className="blogInputField"
+                        className="blogInputField inputField"
                     />
                 </div>
-                <div className="blogInput">
-                    <h5 className="blogInputText">Author:</h5>
+                <div className="formInputDiv">
+                    <h6 className="inputText">Author:</h6>
                     <input
                         type="text"
                         value={blogAuthor}
                         name="BlogAuthor"
                         id="BlogAuthor"
                         onChange={handleAuthorChange}
-                        className="blogInputField"
+                        className="blogInputField inputField"
                     />
                 </div>
-                <div className="blogInput">
-                    <h5 className="blogInputText">URL:</h5>
+                <div className="formInputDiv">
+                    <h6 className="inputText">URL:</h6>
                     <input
                         type="text"
                         value={blogUrl}
                         name="BlogUrl"
                         id="BlogUrl"
                         onChange={handleUrlChange}
-                        className="blogInputField"
+                        className="blogInputField inputField"
                     />
                 </div>
-                <button type="submit">Save Blog</button>
+                <Button variant='success' type="submit" className='btn-sm'>Save Blog</Button>
             </form>
         </div>
     )
