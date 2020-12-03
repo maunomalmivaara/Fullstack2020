@@ -98,7 +98,7 @@ describe('Blog app', function() {
                 .contains('Cypress Title 3').parent()
                     .contains('Show').click()
             cy.contains('All Blogs').parent()
-                .contains('Cypress Title 3').parent()
+                .contains('Cypress Title 3').parent().parent()
                     .contains('Like')
                         .click()
                         .click()
@@ -108,7 +108,7 @@ describe('Blog app', function() {
                 .contains('Cypress Title 1').parent()
                     .contains('Show').click()
             cy.contains('All Blogs').parent()
-                .contains('Cypress Title 1').parent()
+                .contains('Cypress Title 1').parent().parent()
                     .contains('Like')
                         .click()
         
