@@ -83,7 +83,11 @@ button {
 
 .logged-in-div {
     width: 40%;
-    min-width: 200px;
+    min-width: 250px;
+}
+
+#logged-in-username {
+    max-width: 150px;
 }
 
 #blogs-listed * {
