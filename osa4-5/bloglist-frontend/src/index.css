@@ -18,7 +18,7 @@ h1 {
     font-size: 50px;
 }
 
-h2, h3, h5 {
+h2, h3, h5, #logged-in-username {
     color: rgb(9, 92, 170);
 }
 
@@ -83,11 +83,7 @@ button {
 
 .logged-in-div {
     width: 40%;
-    min-width: 250px;
-}
-
-#logged-in-username {
-    max-width: 150px;
+    min-width: 100px;
 }
 
 #blogs-listed * {
